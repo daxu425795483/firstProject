@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <style>
+        .button{
+            width: 100px;
+            height: 30px;
+            text-align: center;
+            color: #fff;
+            line-height: 30px;
+            background: red;
+            font-size: 20px;
+        }
+    </style>
+
+</head>
+
+
+<body ng-app="myApp">
+<div ng-controller="firstController">
+
+	用户名: <input type="text" ng-model="user.username"/><br><br>
+	密码: <input type="password" ng-model="user.pass"/>
+	<br/><br>
+
+    <div>
+        用户名: {{user.username}}<br/>
+        密码: {{user.pass}}<br/>
+    </div>
+    <br/><br>
+    
+    <div class="button" ng-click="get()">获取</div>
+</div>
+</body>
+
+</html>
+
+<script>
+
+    var app=angular.module('myApp',[]);
+
+    app.controller('firstController',function($scope){
+
+        $scope.user={  /*声明user对象*/
+            username:'张三',
+            pass:''
+        }
+
+        $scope.get=function(){
+            console.log($scope.user);
+
+        }
+
+
+
+
+
+//        $scope.user={name:'张三',age:20};
+
+
+//
+//        $scope.list=[
+//            {name:'张三',age:20},
+//            {name:'李四',age:30}
+//        ]
+//        console.log($scope.list[0].name);
+
+
+
+    })
+</script>

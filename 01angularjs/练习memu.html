@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>菜单</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			div{
+				width: 400px;
+				border: 1px solid pink;
+				padding: 10px;
+				margin: 100px;
+			}
+			
+			li,p{
+				display: flex;
+				flex-flow: row nowrap;
+				justify-content: space-between;
+				line-height: 40px;
+				
+			}
+		</style>
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body ng-app="myApp">
+		<div ng-controller="memuController">
+			<ul>
+				<li><span>猪肉炖粉条</span><span><input type="number" ng-model="price1" /></span></li>
+				<li><span>小鸡炖蘑菇</span><span><input type="number" ng-model="price2" /></span></li>
+				<li><span>一锅炖</span><span><input type="number" ng-model="price3" /></span></li>
+			</ul>
+			<hr />
+			<p><span>总价</span><span>{{total()}}</span></p>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var app = angular.module('myApp',[]);
+		app.controller('memuController',function($scope){
+			$scope.price1 = 100;
+			$scope.price2=150;
+			$scope.price3=200;
+			$scope.total= function(){
+				return this.price1 + this.price2 +this.price3;
+			}
+		});
+	</script>
+</html>

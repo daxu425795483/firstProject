@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>control</title>
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body ng-app="myApp">
+		<div ng-controller="firstController">
+			{{name}}
+		</div>
+		<div ng-controller="secondController">
+			<input type="text" ng-model="person.firstName"/><br />
+			<input type="text" ng-model="person.lastName"/><br />
+			{{person.fullName()}}
+		</div>
+	</body>
+	<script type="text/javascript">
+			var app = angular.module('myApp',[]);
+			app.controller('firstController',function($scope){
+				$scope.name='lisi';
+			})
+			app.controller('secondController',function($scope){
+				$scope.person = {
+					firstName:'aaa',
+					lastName:'bbb',
+					fullName:function(){
+						return this.firstName + this.lastName;
+					}
+				}
+			})
+	</script>
+</html>

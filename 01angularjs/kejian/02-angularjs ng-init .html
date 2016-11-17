@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hello angular</title>
+    <!--引入angular-->
+    <script type="text/javascript" src="../js/angular.min.js"></script>
+
+</head>
+
+
+<!--
+
+ng-app 告诉angularjs ng-app里面的内容要被angualrjs解析
+ng-app不等于空的话我们必须得实现它
+-->
+<body ng-app="">
+
+    <!--ng-init  为应用程序定义初始值。-->
+
+    <div ng-init="username='张三'">
+        
+    </div>
+    
+    {{username}}
+    
+    
+    <hr/>
+
+    <div ng-bind="username"></div>
+
+    <hr/>
+	
+	<!--初始值是字符串-->
+    <div ng-init="username='李四';age='100'">
+        {{username}}<br>
+        {{age}}
+    </div>
+    <hr/>
+	
+	<!--初始值是对象格式-->
+    <div ng-init="person={name:'王五',sex:'男'}">
+        {{person.name}}<br>
+        {{person.sex}}
+    </div>
+    <hr>
+    
+    <!--初始值是数组-->
+    <div ng-init="personArr=['赵六','女']">
+        {{personArr[0]}}<br>
+        <span ng-bind="personArr[1]"></span>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>angularjs</title>
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body ng-app="">
+		<input type="text" ng-model="username" />
+		{{username}} <!--输出1-->
+		<p ng-bind="username"></p>  <!--输出2:变量放标签内-->
+		
+		
+		<!--单个变量-->
+		<!--<div ng-init="name='zhangsan'"></div>
+		{{name}}
+		<!--字符串格式-->
+		<!--<div ng-init="name='zhangsan';age='20'"></div>
+		{{name}} {{age}}
+		<!--数组格式-->
+		<!--<div ng-init="per=['lisi','21']"></div>
+		{{per[0]}} {{per[1]}}
+		<!--对象格式-->
+		<div ng-init="person={name:'wangwu',age:22}"></div>
+		{{person.name}} {{person.age}}
+	</body>
+</html>

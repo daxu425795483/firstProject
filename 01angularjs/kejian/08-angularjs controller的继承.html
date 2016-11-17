@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../js/angular.min.js"></script>
+</head>
+
+<!--
+
+ng-app 告诉angularjs ng-app里面的内容要被angualrjs解析
+ng-app不等于空的话我们必须得实现它
+-->
+<body ng-app="myApp">
+	
+    <div ng-controller="parentController">
+        {{name}}
+
+        <div ng-controller="sonController">
+            {{name}} -- {{age}}
+        </div>
+        
+    </div>
+
+</body>
+
+
+
+
+</html>
+
+<script>
+	
+    var app=angular.module('myApp',[]);
+
+    /*$scope  视图和控制器的桥梁  局部作用域*/
+    app.controller('parentController',function($scope){
+
+        $scope.name='张三';
+        $scope.age = '30';
+
+    });
+    
+    app.controller('sonController', function ($scope){
+    	$scope.name = '李四';
+    	$scope.age = 100;
+    })
+
+
+</script>
